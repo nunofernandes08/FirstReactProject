@@ -1,0 +1,11 @@
+.tablee {
+  width: 100%;
+}
+
+.background:hover {
+  background-color: rgb(184, 184, 184);
+}
+
+.makeStyles-table-3 {
+  min-width: 0px !important;
+}

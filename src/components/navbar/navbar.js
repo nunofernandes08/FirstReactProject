@@ -3,13 +3,16 @@ import React from 'react';
 import logo from '../../logo.svg';
 import './navbar.css';
 
-import { makeStyles } from '@material-ui/core/styles';
+import { fade, makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
+import InputBase from '@material-ui/core/InputBase';
+import SearchIcon from '@material-ui/icons/Search';
+
 
 
 const useStyles = makeStyles((theme) => ({
@@ -17,8 +20,14 @@ const useStyles = makeStyles((theme) => ({
   menuButton: {
     marginRight: theme.spacing(2),
   },
-  title: {
-    flexGrow: 1,
+
+  searchIcon: {
+    height: '100%',
+    position: 'absolute',
+    pointerEvents: 'none',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 }));
 
@@ -30,16 +39,30 @@ export default function ButtonAppBar() {
 
   return (
     <div className="makeStyles-root-1">
-      <AppBar position="static">
+      <AppBar position="static" >
         <Toolbar>
-          <IconButton edge="start" className={classes.menuButton} className="ola" color="inherit" aria-label="menu">
-            <MenuIcon />
-          </IconButton>
-          <img src={logo} className="App-logo" alt="logo" />
-          <Typography variant="h6" className={classes.title}>
-            Table
-          </Typography>
-          <Button color="inherit">{date} HOURS</Button>
+          <div class="navbar">
+            <div class="left">
+              <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
+                <MenuIcon />
+              </IconButton>
+
+              <img src={logo} className="App-logo" alt="logo" />
+
+              <Typography variant="h6" className={classes.title}>
+                Table
+              </Typography>
+            </div>
+
+            <div class="center">
+              <InputBase placeholder="Search…" inputProps={{ 'aria-label': 'search' }} />
+            </div>
+
+            <div class="right">
+              <h3 color="inherit">{date} HOURS</h3>
+            </div>
+            
+          </div>
         </Toolbar>
       </AppBar>
     </div>

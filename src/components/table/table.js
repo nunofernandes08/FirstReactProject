@@ -8,6 +8,8 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 
+import './table.css';
+
 const StyledTableCell = withStyles((theme) => ({
   head: {
     backgroundColor: '#3f51b5',
@@ -32,7 +34,7 @@ function createData(brand, name, model, color) {
 }
 
 const rows = [
-  createData('Harley-davidson', '883', '883', 'Black'),
+  createData('Harley-davidson', 'Harley-davidson 883', '883', 'Black'),
   createData('Harley-davidson', 'Harley-davidson Dyna', 'Dyna', 'Black'),
   createData('Harley-davidson', 'Harley-davidson Super Glide', 'Super Glide', 'Black'),
   createData('Harley-davidson', 'Harley-davidson Fat-bob', 'Fat-bob', 'Black'),
@@ -48,10 +50,10 @@ export default function CustomizedTables() {
   const classes = useStyles();
 
   return (
-    <TableContainer component={Paper}>
+    <TableContainer component={Paper} class="tablee">
       <Table className={classes.table} aria-label="customized table">
         <TableHead>
-          <TableRow>
+          <TableRow >
             <StyledTableCell>Brand</StyledTableCell>
             <StyledTableCell align="center">Name</StyledTableCell>
             <StyledTableCell align="center">Model</StyledTableCell>
@@ -60,7 +62,7 @@ export default function CustomizedTables() {
         </TableHead>
         <TableBody>
           {rows.map((row) => (
-            <StyledTableRow key={row.name}>
+            <StyledTableRow key={row.name}  className="background">
               <StyledTableCell>{row.brand}</StyledTableCell>
               <StyledTableCell align="center">{row.name}</StyledTableCell>
               <StyledTableCell align="center">{row.model}</StyledTableCell>
