@@ -1,0 +1,9 @@
+.floatButtons {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.button {
+  margin-inline: 10px;
+}
